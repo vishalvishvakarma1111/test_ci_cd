@@ -19,11 +19,18 @@ platform :ios do
   desc "Description of what the lane does"
   lane :beta do
     # add actions here: https://docs.fastlane.tools/actions
-    build_app(
-        scheme: "MyApp",
-        workspace: "Runner.xcworkspace",
-        export_method: "app-store"
-      )
+       build_app
+
+      # Upload the build to TestFlight
+      upload_to_testflight
+    end
+#    build_app(
+#        scheme: "MyApp",
+#        workspace: "Runner.xcworkspace",
+#        export_method: "app-store"
+#      )
   end
 end
+
+
 

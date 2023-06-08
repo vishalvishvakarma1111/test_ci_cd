@@ -57,9 +57,6 @@ jobs:
       - name: Prebuild
         run: flutter build ios --release --no-codesign
 
-     - name: fastlane version
-        run: fastlane --version
-
       - name: Execute Fastlane command
         run: cd ios && fastlane release type:github
         timeout-minutes: 40
