@@ -27,7 +27,7 @@ jobs:
         run: gem install fastlane -NV
 
       - name: Run Fastlane Beta
-        run: bundle exec fastlane beta
+        run: cd ios && fastlane init && bundle exec fastlane beta
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
 
