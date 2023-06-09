@@ -13,22 +13,58 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+
 default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
   lane :beta do
-    # add actions here: https://docs.fastlane.tools/actions
-       build_app
 
-      # Upload the build to TestFlight
-      upload_to_testflight
-    end
-#    build_app(
-#        scheme: "MyApp",
-#        workspace: "Runner.xcworkspace",
-#        export_method: "app-store"
-#      )
+
+  api_key = app_store_connect_api_key(
+      key_id: "4T6C59FKR7",
+      issuer_id: "69a6de8d-aed7-47e3-e053-5b8c7c11a4d1",
+      key_filepath: "/Users/macos/Downloads/AuthKey_4T6C59FKR7.p8",
+      duration: 1200, # optional (maximum 1200)
+      in_house: false # optional but may be required if using match/sigh
+    )
+
+  pilot(api_key: api_key)
+
+    # add actions here: https://docs.fastlane.tools/actions
+    get_certificates(
+ #    team_id: "52D699Z24G"
+    )           # invokes cert
+    get_provisioning_profile(
+  #   team_id: "52D699Z24G",
+     )   # invokes sigh
+
+increment_build_number(
+  build_number: "2" # set a specific number
+)
+
+    enable_automatic_code_signing(
+    path: "Runner.xcodeproj",
+ #   team_id: "52D699Z24G",
+)
+
+      build_app(
+      scheme: "Runner",
+      export_method: "app-store",
+      export_xcargs: "-allowProvisioningUpdates",
+      export_options: {
+      provisioningProfiles: {
+         'com.app.cicd' => 'TestCICD_Dis.mobileprovision',
+     #     teamID: "52D699Z24G",
+          }
+        }
+     )
+    upload_to_testflight(
+    username: ENV["FASTLANE_USER"],
+
+    )
+
+
   end
 end
 

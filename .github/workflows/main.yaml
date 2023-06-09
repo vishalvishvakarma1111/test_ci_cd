@@ -17,6 +17,29 @@ jobs:
         with:
           flutter-version: '3.7.12'
 
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+
+      - name: Install Fastlane
+        run: gem install fastlane -NV
+
+      - name: Build and Export iOS App
+        run: fastlane ios build_and_export_app
+
+      - name: Upload to TestFlight
+        run: fastlane ios upload_to_testflight
+
+
+
+
+
+
+
+
+
+
 
 #     # Install the Apple certificate and provisioning profile
 #     - name: Install the Apple certificate and provisioning profile
@@ -44,22 +67,22 @@ jobs:
 #         mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 #         cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
+#
+#      - uses: ruby/setup-ruby@v1
+#        with:
+#          ruby-version: '3.1.2'
+#      - name: Install Fastlane
+#        run: cd ios && bundle install && cd ..
+#      - name: Install packages
+#        run: flutter pub get
+#      - name: Install pods
+#        run: cd ios && pod install && cd ..
+#      - name: Prebuild
+#        run: flutter build ios --release --no-codesign
 
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1.2'
-      - name: Install Fastlane
-        run: cd ios && bundle install && cd ..
-      - name: Install packages
-        run: flutter pub get
-      - name: Install pods
-        run: cd ios && pod install && cd ..
-      - name: Prebuild
-        run: flutter build ios --release --no-codesign
-
-      - name: Execute Fastlane command
-        run: cd ios && fastlane release type:github
-        timeout-minutes: 40
+#      - name: Execute Fastlane command
+#        run: cd ios && fastlane release type:github
+#        timeout-minutes: 40
 
 
 
