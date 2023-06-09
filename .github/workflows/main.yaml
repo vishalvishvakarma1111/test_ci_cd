@@ -17,13 +17,16 @@ jobs:
         with:
           flutter-version: '3.7.12'
 
-      - name: Runging fastlane
-         run: fastlane beta
+      - name: Install Bundler
+        run: gem install bundler
+
+      - name: Install Fastlane
+        run: gem install fastlane -NV
+
+      - name: Run Fastlane Beta
+        run: fastlane beta
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-        run: fastlane ios upload_to_testflight
-
-
 
 
 
