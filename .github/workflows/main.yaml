@@ -17,6 +17,9 @@ jobs:
         with:
           flutter-version: '3.7.12'
 
+      - name: Install Gems
+        run: bundle install
+
       - name: Install Bundler
         run: gem install bundler
 
