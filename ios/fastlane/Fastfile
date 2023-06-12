@@ -31,24 +31,19 @@ platform :ios do
       in_house: false # optional but may be required if using match/sigh
     )
 
-  pilot(api_key: api_key)
+    pilot(api_key: api_key)
 
     # add actions here: https://docs.fastlane.tools/actions
-    get_certificates(
- #    team_id: "52D699Z24G"
-    )           # invokes cert
-    get_provisioning_profile(
-  #   team_id: "52D699Z24G",
-     )   # invokes sigh
+    get_certificates()           # invokes cert
+    get_provisioning_profile()   # invokes sigh
 
-increment_build_number(
-  build_number: "3" # set a specific number
-)
+    increment_build_number(
+      build_number: "4" # set a specific number
+    )
 
     enable_automatic_code_signing(
     path: "Runner.xcodeproj",
- #   team_id: "52D699Z24G",
-)
+     )
 
       build_app(
       scheme: "Runner",
@@ -57,8 +52,7 @@ increment_build_number(
       export_options: {
       provisioningProfiles: {
          'com.app.cicd' => 'TestCICD_Dis.mobileprovision',
-     #     teamID: "52D699Z24G",
-          }
+         }
         }
      )
     upload_to_testflight(
