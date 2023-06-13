@@ -30,14 +30,9 @@ jobs:
         run: gem install fastlane -NV
 
 
-      - name: Build iOS App
-        run: |
-          mkdir -p $HOME/Library/Logs/gym/
-          set -o pipefail && xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -destination 'generic/platform=iOS' -archivePath $HOME/Library/Developer/Xcode/Archives/Runner\ 2023-06-13\ 09.53.10.xcarchive archive -allowProvisioningUpdates > $HOME/Library/Logs/gym/Runner-Runner.log 2>&1
-
       - name: Select Xcode version
         run:
-          sudo xcode-select -s /Applications/Xcode_14.2.app
+          sudo xcode-select -s /Applications/Xcode_14.3.app
 
       - name: Make ios build
         run: cd ios && bundle exec fastlane gym --scheme Runner
