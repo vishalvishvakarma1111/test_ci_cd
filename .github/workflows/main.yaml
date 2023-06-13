@@ -29,6 +29,9 @@ jobs:
       - name: Install Fastlane
         run: gem install fastlane -NV
 
+      - name: Build iOS App
+        run: set -o pipefail && xcodebuild -workspace ./Runner.xcworkspace -scheme Runner -destination 'generic/platform=iOS' -archivePath /Users/runner/Library/Developer/Xcode/Archives/2023-06-13/Runner\ 2023-06-13\ 09.53.10.xcarchive archive -allowProvisioningUpdates | tee /Users/runner/Library/Logs/gym/Runner-Runner.log | xcpretty
+
       - name: Select Xcode version
         run:
           sudo xcode-select -s /Applications/Xcode_14.2.app

@@ -51,7 +51,7 @@ platform :ios do
 
 
     enable_automatic_code_signing(
-    path: "test-automated-build/ios/Runner.xcodeproj",
+        path: "test-automated-build/ios/Runner.xcodeproj",
 
      )
 
