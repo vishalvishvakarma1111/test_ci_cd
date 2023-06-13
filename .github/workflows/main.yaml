@@ -38,8 +38,8 @@ jobs:
 #        run: cd ios && bundle exec fastlane gym --scheme Runner
 
 
-      - name: Run Fastlane Beta
-        run: flutter build ios
+      - name: Ios build
+        run: flutter build ios --release --no-codesign
 
       - name: Run Fastlane Beta
         run: fastlane init && bundle exec fastlane beta
