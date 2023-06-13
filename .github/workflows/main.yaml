@@ -27,7 +27,7 @@ jobs:
         run: gem install fastlane -NV
 
       - name: Make ios build
-        run: cd ios && bundle exec fastlane gym --scheme MyScheme
+        run: cd ios && bundle exec fastlane gym --scheme Runner
 
       - name: Run Fastlane Beta
         run: fastlane init && bundle exec fastlane beta
