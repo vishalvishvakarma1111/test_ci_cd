@@ -40,8 +40,15 @@ platform :ios do
 
 
     enable_automatic_code_signing(
-    path: "Runner.xcodeproj",
+    path: "test-automated-build/ios/Runner.xcodeproj",
+
      )
+
+    automatic_code_signing(
+      path: "test-automated-build/ios/Runner.xcodeproj",
+      use_automatic_signing: true
+    )
+
 
       build_app(
       scheme: "Runner",
