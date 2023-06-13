@@ -32,9 +32,8 @@ jobs:
 
       - name: Build iOS App
         run: |
-          mkdir -p /Users/runner/Library/Logs/gym/
-          set -o pipefail && xcodebuild -workspace /Users/macos/test-automated-build/ios/Runner.xcworkspace -scheme Runner -destination 'generic/platform=iOS' -archivePath /Users/runner/Library/Developer/Xcode/Archives/2023-06-13/Runner\ 2023-06-13\ 09.53.10.xcarchive archive -allowProvisioningUpdates > /Users/runner/Library/Logs/gym/Runner-Runner.log 2>&1
-  
+          mkdir -p $HOME/Library/Logs/gym/
+          set -o pipefail && xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -destination 'generic/platform=iOS' -archivePath $HOME/Library/Developer/Xcode/Archives/Runner\ 2023-06-13\ 09.53.10.xcarchive archive -allowProvisioningUpdates > $HOME/Library/Logs/gym/Runner-Runner.log 2>&1
 
       - name: Select Xcode version
         run:
