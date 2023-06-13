@@ -26,6 +26,9 @@ jobs:
       - name: Install Fastlane
         run: gem install fastlane -NV
 
+      - name: Make ios build
+        run: flutter build ios
+
       - name: Run Fastlane Beta
         run: cd ios && fastlane init && bundle exec fastlane beta
         env:
