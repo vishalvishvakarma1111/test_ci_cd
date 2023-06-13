@@ -29,13 +29,17 @@ jobs:
       - name: Install Fastlane
         run: gem install fastlane -NV
 
+#
+#      - name: Select Xcode version
+#        run:
+#          sudo xcode-select -s /Applications/Xcode_14.3.app
+#
+#      - name: Make ios build
+#        run: cd ios && bundle exec fastlane gym --scheme Runner
 
-      - name: Select Xcode version
-        run:
-          sudo xcode-select -s /Applications/Xcode_14.3.app
 
-      - name: Make ios build
-        run: cd ios && bundle exec fastlane gym --scheme Runner
+      - name: Run Fastlane Beta
+        run: flutter build ios
 
       - name: Run Fastlane Beta
         run: fastlane init && bundle exec fastlane beta
