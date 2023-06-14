@@ -41,7 +41,7 @@ jobs:
 #      - name: create build
 #        run: cd ios && bundle update &&  bundle exec fastlane gym --scheme Runner
       - name: create build
-        run: bundle exec fastlane gym --scheme Runner
+        run: cd ios && bundle exec fastlane gym --scheme Runner
 
       - name: Run Fastlane Beta
         run: cd ios && fastlane init &&  bundle exec fastlane beta
