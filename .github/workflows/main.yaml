@@ -40,7 +40,8 @@ jobs:
 #      - name: Make ios build
 #        run: cd ios && bundle exec fastlane gym --scheme Runner
 
-
+      - name: Reset cache
+        run: bundle exec fastlane cache_reset
       - name: Run Fastlane Beta
         run: cd ios && fastlane init &&  bundle exec fastlane beta
         env:
