@@ -41,7 +41,7 @@ jobs:
 #        run: cd ios && bundle exec fastlane gym --scheme Runner
 
       - name: Reset cache
-        run: bundle exec fastlane cache_reset
+        run:  bundle exec fastlane action xcclean
       - name: Run Fastlane Beta
         run: cd ios && fastlane init &&  bundle exec fastlane beta
         env:
