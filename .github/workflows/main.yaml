@@ -30,7 +30,7 @@ jobs:
         run: gem install fastlane -NV
 
 
-     - name: create build
+      - name: create build
         run: bundle exec fastlane gym --scheme Runner
 
 
