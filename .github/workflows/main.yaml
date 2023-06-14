@@ -41,7 +41,11 @@ jobs:
 #      - name: create build
 #        run: cd ios && bundle update &&  bundle exec fastlane gym --scheme Runner
       - name: create build
-        run: cd ios && sudo gem install bundler && sudo gem install -i /usr/local/bin fastlane  && bundle exec fastlane gym --scheme Runner
+        run: |
+          cd ios
+          sudo gem install bundler
+          bundle install
+          bundle exec fastlane gym --scheme Runner
 
       - name: Run Fastlane Beta
         run: cd ios && fastlane init &&  bundle exec fastlane beta
