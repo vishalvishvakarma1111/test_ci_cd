@@ -33,33 +33,41 @@ platform :ios do
 
     pilot(api_key: api_key)
 
+      upload_to_testflight(
+        api_key: api_key,
+        skip_submission: true,
+        ipa: "/Users/runner/work/test_ci_cd/test_ci_cd/build/ios/iphoneos/Runner.app.",
+        skip_waiting_for_build_processing: true,
+      )
 
-    # add actions here: https://docs.fastlane.tools/actions
-    get_certificates()           # invokes cert
-    get_provisioning_profile()   # invokes sigh
-
-
-    enable_automatic_code_signing(
-        path: "test-automated-build/ios/Runner.xcodeproj",
-
-     )
-
-
-      build_app(
-      scheme: "Runner",
-      export_method: "app-store",
-      export_xcargs: "-allowProvisioningUpdates",
-      export_options: {
-          manageAppVersionAndBuildNumber: false,
-          provisioningProfiles: {
-         'com.app.cicd' => 'TestCICD_Dis.mobileprovision',
-         }
-        }
-     )
-    upload_to_testflight(
-    username: ENV["FASTLANE_USER"],
-
-    )
+#
+#
+#     # add actions here: https://docs.fastlane.tools/actions
+#     get_certificates()           # invokes cert
+#     get_provisioning_profile()   # invokes sigh
+#
+#
+#     enable_automatic_code_signing(
+#         path: "test-automated-build/ios/Runner.xcodeproj",
+#
+#      )
+#
+#
+#       build_app(
+#       scheme: "Runner",
+#       export_method: "app-store",
+#       export_xcargs: "-allowProvisioningUpdates",
+#       export_options: {
+#           manageAppVersionAndBuildNumber: false,
+#           provisioningProfiles: {
+#          'com.app.cicd' => 'TestCICD_Dis.mobileprovision',
+#          }
+#         }
+#      )
+#     upload_to_testflight(
+#     username: ENV["FASTLANE_USER"],
+#
+#     )
 
 
   end
