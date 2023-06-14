@@ -22,7 +22,7 @@ jobs:
       - name: Set up Ruby and Fastlane
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7 # Choose the appropriate Ruby version for your project
+          ruby-version: 3.1.4 # Choose the appropriate Ruby version for your project
 
 
       - name: Install Gems
