@@ -46,7 +46,7 @@ jobs:
 
 
       - name: Run Fastlane Beta
-        run: fastlane init && bundle exec fastlane beta
+        run: cd ios && fastlane init &&  bundle exec fastlane beta
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
 
