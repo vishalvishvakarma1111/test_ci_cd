@@ -17,17 +17,25 @@ jobs:
         with:
           flutter-version: '3.7.12'
 
+
+
+      - name: Set up Ruby and Fastlane
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7 # Choose the appropriate Ruby version for your project
+
+
       - name: Install Gems
         run: bundle install
 
       - name: Flutter clean folder and build, pod isntall
         run: flutter clean && flutter pub get && cd ios && rm podfile.lock && rm -rf pods && pod install
 
-      - name: Install Bundler
-        run: gem install bundler
-
-      - name: Install Fastlane
-        run: gem install fastlane -NV
+#      - name: Install Bundler
+#        run: gem install bundler
+#
+#      - name: Install Fastlane
+#        run: gem install fastlane -NV
 
 
 #      - name: create build

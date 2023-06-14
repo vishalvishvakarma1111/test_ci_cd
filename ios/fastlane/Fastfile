@@ -1,3 +1,4 @@
+fastlane_version "2.213.0" # Replace with the desired Fastlane version
 # This file contains the fastlane.tools configuration
 # You can find the documentation at https://docs.fastlane.tools
 #
