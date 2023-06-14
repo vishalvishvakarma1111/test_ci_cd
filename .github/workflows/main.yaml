@@ -39,6 +39,8 @@ jobs:
 #        run: cd ios && bundle update &&  bundle exec fastlane gym --scheme Runner
 
 
+      - name: fastlane version
+        run: cd ios && fastlane --version
       - name: Run Fastlane Beta
         run: cd ios && fastlane init &&  bundle exec fastlane beta
 
