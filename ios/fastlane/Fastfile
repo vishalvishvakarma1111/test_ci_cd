@@ -20,7 +20,7 @@ default_platform(:ios)
 platform :ios do
 
     desc "Set Info.plist Version and Build Number"
-      lane :set_full_version do
+    lane :set_full_version do
         version = flutter_version()
 
         increment_version_number(version_number: version['version_name'])
@@ -30,7 +30,7 @@ platform :ios do
 
 
   desc "Description of what the lane does"
-  lane :beta do
+  lane :deploy do
     set_full_version()
     setup_ci if is_ci
 
