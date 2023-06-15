@@ -1,5 +1,7 @@
 {
-  "apiKey": "-----BEGIN PRIVATE KEY-----\\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg/XitR5jac4m4+rCUcvTc1/3lgGjEM6flKGAywXTW1F2gCgYIKoZIzj0DAQehRANCAASyH0/2ivHKTK3iPiY+avDX7qQUpFeW6eOh/Au2dSbV76FXRFmdujxQsFMmwZOkntlDnGtzYBnUB2goy1dJCNbh\\n-----END PRIVATE KEY-----",
-  "apiIssuer": "69a6de8d-aed7-47e3-e053-5b8c7c11a4d1",
-  "appId": "com.app.cicd"
+  "key_id": "4T6C59FKR7",
+  "issuer_id": "69a6de8d-aed7-47e3-e053-5b8c7c11a4d1",
+  "key": "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg/XitR5jac4m4+rCUcvTc1/3lgGjEM6flKGAywXTW1F2gCgYIKoZIzj0DAQehRANCAASyH0/2ivHKTK3iPiY+avDX7qQUpFeW6eOh/Au2dSbV76FXRFmdujxQsFMmwZOkntlDnGtzYBnUB2goy1dJCNbh\n-----END PRIVATE KEY-----",
+  "duration": 1200,
+  "in_house": false
 }
