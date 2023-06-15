@@ -28,7 +28,7 @@ jobs:
       - name: Build and Deploy
         run: |
             cd ios && bundle install
-            cd ios/fastlane && bundle exec fastlane deploy
+            cd ios && bundle exec fastlane deploy
 
 
         env:
