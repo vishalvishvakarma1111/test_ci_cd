@@ -43,7 +43,7 @@ jobs:
       - name: create build
         run: |
           cd ios
-          sudo gem install bundler
+          gem install bundler
           bundle install
           bundle exec fastlane gym --scheme Runner
 
