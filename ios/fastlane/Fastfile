@@ -46,6 +46,18 @@ platform :ios do
 
     pilot(api_key: api_key)
 
+          build_app(
+          scheme: "Runner",
+          export_method: "app-store",
+          export_xcargs: "-allowProvisioningUpdates",
+          export_options: {
+              manageAppVersionAndBuildNumber: false,
+              provisioningProfiles: {
+             'com.app.cicd' => 'TestCICD_Dis.mobileprovision',
+             }
+            }
+         )
+
 #       upload_to_testflight(
 #         api_key: api_key,
 #         skip_submission: true,
