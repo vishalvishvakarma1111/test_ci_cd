@@ -27,7 +27,7 @@ jobs:
 
       - name: Build and Deploy
         run: |
-            cd ios && bundle install
+            flutter build ios && cd ios && bundle install
             bundle exec fastlane deploy
 
 
