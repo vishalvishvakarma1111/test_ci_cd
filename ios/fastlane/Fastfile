@@ -58,7 +58,7 @@ platform :ios do
 
 
 
-        # add actions here: https://docs.fastlane.tools/actions
+       # add actions here: https://docs.fastlane.tools/actions
 #       get_certificates()           # invokes cert
 #        get_provisioning_profile(readonly:true)   # invokes sigh
 
