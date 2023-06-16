@@ -36,7 +36,7 @@ platform :ios do
     get_certificates()           # invokes cert
     get_provisioning_profile()   # invokes sigh
 
-    xcversion(version: "14.3")
+#     xcversion(version: "14.2")
 
 
     cocoapods(clean_install: is_ci)
