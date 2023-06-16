@@ -28,8 +28,7 @@ jobs:
         run: |
           cd ios
           bundle install
-          cd ..
-          flutter build ios
+
 
       - name: Build and Deploy
         run: |
