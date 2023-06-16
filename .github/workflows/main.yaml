@@ -36,6 +36,7 @@ jobs:
       - name: Build and Deploy
         run: |
             cd ios
+            bundle exec fastlane gym --verbose
             bundle exec fastlane deploy
 
 
