@@ -24,10 +24,16 @@ jobs:
         with:
           ruby-version: 2.6
           rubygems: latest
+      - name: Install dependencies and build iOS app
+        run: |
+          cd ios
+          bundle install
+          cd ..
+          flutter build ios
 
       - name: Build and Deploy
         run: |
-            flutter build ios && cd ios && bundle install
+            cd ios
             bundle exec fastlane deploy
 
 
