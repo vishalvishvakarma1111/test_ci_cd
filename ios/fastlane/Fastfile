@@ -44,6 +44,7 @@ platform :ios do
 
 
     build_app(
+      xcargs: "-allowProvisioningUpdates",
       workspace: "Runner.xcworkspace",
       scheme: "Runner",
       archive_path: "../build/ios/Runner.xcarchive",
