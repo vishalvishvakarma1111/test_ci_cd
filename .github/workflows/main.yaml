@@ -26,7 +26,10 @@ jobs:
           rubygems: latest
       - name: Install dependencies and build iOS app
         run: |
+          flutter clean
+          flutter pub get
           cd ios
+          pod install
           bundle install
 
 
