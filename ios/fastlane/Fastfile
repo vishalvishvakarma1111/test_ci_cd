@@ -42,8 +42,7 @@ platform :ios do
       readonly: is_ci,
     )
 
-    disable_automatic_code_signing(path: "Runner.xcodeproj")
-(path: "Runner.xcodeproj")
+  disable_automatic_code_signing(path: "Runner.xcodeproj")
 
     build_app(
       xcargs: "-allowProvisioningUpdates",
