@@ -87,8 +87,12 @@ jobs:
         run: |
           cd ios
           bundle exec fastlane gym --verbose
+         
           bundle exec fastlane deploy
 
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
 
 
 #      - name: Create Release
