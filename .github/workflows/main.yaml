@@ -71,6 +71,24 @@ jobs:
           name: release-ipa
           path: build/ios/iphoneos/Runner.zip
 
+      - name: Setup Fastlane
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+          rubygems: latest
+      - name: Install dependencies and build iOS app
+        run: |
+          flutter clean
+          flutter pub get
+          cd ios
+          pod install
+          bundle install
+      - name: Build and Deploy
+        run: |
+          cd ios
+          bundle exec fastlane gym --verbose
+          bundle exec fastlane deploy
+
 
 
 #      - name: Create Release
