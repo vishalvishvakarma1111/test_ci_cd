@@ -48,7 +48,7 @@ jobs:
 
       # Build and sign the ipa using a single flutter command
       - name: Pods install
-         run: cd ios && pod install
+        run: cd ios &&  pod install && cd ..
 
 
       - name: Building IPA
