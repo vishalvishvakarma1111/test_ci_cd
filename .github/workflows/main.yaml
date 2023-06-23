@@ -21,46 +21,46 @@ jobs:
           cat android/fastlane/service_account.json
           
 
-#
-#      - name: Download Android keystore
-#        id: android_keystore
-#        uses: timheuer/base64-to-file@v1.0.3
-#        with:
-#          fileName: key.jks
-#          encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
-#
-#      - name: Create key.properties
-#        run: |
-#          echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
-#          echo "storePassword=${{ secrets.ANDROID_STORE_PASSWORD }}" >> android/key.properties
-#          echo "keyPassword=${{ secrets.ANROID_KEY_PASSWORD }}" >> android/key.properties
-#          echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/key.properties
-#
-#
-#
-#     # ruby install
-#      - name: Setup Fastlane
-#        uses: ruby/setup-ruby@v1
-#        with:
-#          ruby-version: 2.6
-#          rubygems: latest
-#
-#      - name: Install dependencies
-#        run: |
-#          cd android
-#          bundle install
-#
-#
-#      - name: Build Android App Bundle
-#
-#        run: |
-#          echo "${{ secrets.ANDROID_PLAYSTORE_SECRET }}" | base64 --decode > android/fastlane/service_account.json
-#          cat android/fastlane/service_account.json
-#          flutter clean
-#          flutter pub get
-#          flutter build appbundle
-#          cd android
-#          bundle exec fastlane deploy
+
+      - name: Download Android keystore
+        id: android_keystore
+        uses: timheuer/base64-to-file@v1.0.3
+        with:
+          fileName: key.jks
+          encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+
+      - name: Create key.properties
+        run: |
+          echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
+          echo "storePassword=${{ secrets.ANDROID_STORE_PASSWORD }}" >> android/key.properties
+          echo "keyPassword=${{ secrets.ANROID_KEY_PASSWORD }}" >> android/key.properties
+          echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/key.properties
+
+
+
+     # ruby install
+      - name: Setup Fastlane
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+          rubygems: latest
+
+      - name: Install dependencies
+        run: |
+          cd android
+          bundle install
+
+
+      - name: Build Android App Bundle
+
+        run: |
+          echo "${{ secrets.ANDROID_PLAYSTORE_SECRET }}" | base64 --decode > android/fastlane/service_account.json
+          cat android/fastlane/service_account.json
+          flutter clean
+          flutter pub get
+          flutter build appbundle
+          cd android
+          bundle exec fastlane deploy
        
           
 
