@@ -44,6 +44,8 @@ jobs:
           bundle install
 
       - name: Build Android App Bundle
+        env:
+          PLAY_STORE_JSON: ${{ secrets.ANDROID_PLAYSTORE_SECRET }}
         run: |
           flutter clean 
           flutter pub get
