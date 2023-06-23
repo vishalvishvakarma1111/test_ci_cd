@@ -45,8 +45,8 @@ jobs:
     
 
       - name: Build Android App Bundle
-         env:
-           echo "${{ secrets.ANDROID_PLAYSTORE_SECRET }}" | base64 --decode > android/service_account.json
+        env:
+          echo "${{ secrets.ANDROID_PLAYSTORE_SECRET }}" | base64 --decode > android/service_account.json
 
 
 
