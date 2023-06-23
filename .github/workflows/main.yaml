@@ -42,14 +42,13 @@ jobs:
         run: |
           cd android
           bundle install
-
-      - name: Set up service account JSON file
-        run: echo "${{ secrets.ANDROID_PLAYSTORE_SECRET }}" | base64 --decode > android/play_store_secret.json
-
+    
 
       - name: Build Android App Bundle
-        env:
-          PLAY_STORE_JSON: ./service-account.json
+         env:
+           echo "${{ secrets.ANDROID_PLAYSTORE_SECRET }}" | base64 --decode > android/service_account.json
+
+
 
         run: |
           flutter clean 
