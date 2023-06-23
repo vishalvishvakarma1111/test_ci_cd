@@ -32,11 +32,11 @@ jobs:
 
 
      # ruby install
-     - name: Setup Fastlane
-       uses: ruby/setup-ruby@v1
-       with:
-         ruby-version: 2.6
-         rubygems: latest
+     -  name: Setup Fastlane
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+          rubygems: latest
 
       - name: Build Android App Bundle
 #        run: flutter build appbundle --release
