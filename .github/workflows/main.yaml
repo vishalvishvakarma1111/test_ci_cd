@@ -44,7 +44,8 @@ jobs:
           bundle install
 
       - name: Set up service account JSON file
-        run: echo "${{ secrets.ANDROID_PLAYSTORE_SECRET }}" > service-account.json
+        run: echo "${{ secrets.ANDROID_PLAYSTORE_SECRET }}" | base64 --decode > android/play_store_secret.json
+
 
       - name: Build Android App Bundle
         env:
