@@ -1,0 +1,2 @@
+json_key_file("/Users/macos/Downloads/TestCICD\ NEW/test-ci-cd-390407-ec6a213a7b89.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+package_name("com.app.cicd") # e.g. com.krausefx.app
