@@ -32,7 +32,7 @@ jobs:
 #        run: flutter build appbundle --release
         run:  |
           cd android
-          fastlane deploy
+          bundle exec fastlane deploy
        
           
 
