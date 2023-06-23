@@ -44,7 +44,10 @@ jobs:
           bundle install
 
       - name: Build Android App Bundle
-        run:  |
+        run: |
+          flutter clean 
+          flutter pub get
+          flutter build appbundle
           cd android
           bundle exec fastlane deploy
        
