@@ -32,7 +32,7 @@ jobs:
 
 
      # ruby install
-     -  name: Setup Fastlane
+      - name: Setup Fastlane
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
