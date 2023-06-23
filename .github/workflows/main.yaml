@@ -47,7 +47,7 @@ jobs:
       - name: Build Android App Bundle
 
         run: |
-          echo "${{ secrets.ANDROID_PLAYSTORE_SECRET }}" | base64 --decode > android/service_account.json
+          echo "${{ secrets.ANDROID_PLAYSTORE_SECRET }}" | base64 --decode > android/fastlane/service_account.json
           flutter clean 
           flutter pub get
           flutter build appbundle
