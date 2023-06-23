@@ -29,8 +29,9 @@ jobs:
           echo "keyPassword=${{ secrets.ANROID_KEY_PASSWORD }}" >> android/key.properties
           echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/key.properties
       - name: Build Android App Bundle
-        run: flutter build appbundle --release
-
+#        run: flutter build appbundle --release
+        run:  cd android && bundle install
+              bundle exec fastlane deploy
           
           
 
