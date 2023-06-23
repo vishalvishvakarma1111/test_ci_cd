@@ -38,11 +38,14 @@ jobs:
           ruby-version: 2.6
           rubygems: latest
 
+      - name: Install dependencies
+        run: |
+          cd android
+          bundle install
+
       - name: Build Android App Bundle
-#        run: flutter build appbundle --release
         run:  |
           cd android
-          sudo gem install bundler
           bundle exec fastlane deploy
        
           
